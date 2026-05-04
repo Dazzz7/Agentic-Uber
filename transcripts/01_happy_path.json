@@ -1,0 +1,342 @@
+{
+  "scenario": "01_happy_path",
+  "platform": "Uber + Lyft",
+  "started": "2026-05-04T09:23:45.184121+00:00",
+  "finished": "2026-05-04T09:24:49.717797+00:00",
+  "action_log": [
+    {
+      "action_id": "156f922a",
+      "action_type": "search_rides",
+      "timestamp_start": "2026-05-04T09:23:48.203722+00:00",
+      "timestamp_end": "2026-05-04T09:23:48.203872+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "pickup": "SFO Airport",
+        "dropoff": "downtown San Jose"
+      },
+      "executed": {
+        "pickup": "SFO Airport",
+        "dropoff": "downtown San Jose"
+      },
+      "result": {
+        "platform": "Uber",
+        "pickup": "SFO Airport",
+        "dropoff": "downtown San Jose",
+        "ride_count": 5,
+        "options": [
+          {
+            "option_id": "opt_32634a",
+            "ride_type": "UberPool",
+            "price_range": "$54\u2013$67",
+            "price_min": 54.48,
+            "price_max": 66.59,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 5,
+            "capacity": 2
+          },
+          {
+            "option_id": "opt_8d932f",
+            "ride_type": "UberX",
+            "price_range": "$78\u2013$96",
+            "price_min": 78.5,
+            "price_max": 95.94,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 12,
+            "capacity": 4
+          },
+          {
+            "option_id": "opt_e98736",
+            "ride_type": "UberXL",
+            "price_range": "$114\u2013$139",
+            "price_min": 113.62,
+            "price_max": 138.86,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 7,
+            "capacity": 6
+          },
+          {
+            "option_id": "opt_deb1b8",
+            "ride_type": "Uber Comfort",
+            "price_range": "$130\u2013$158",
+            "price_min": 129.68,
+            "price_max": 158.49,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 4,
+            "capacity": 4
+          },
+          {
+            "option_id": "opt_e7b91d",
+            "ride_type": "Uber Black",
+            "price_range": "$211\u2013$258",
+            "price_min": 210.87,
+            "price_max": 257.73,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 4,
+            "capacity": 4
+          }
+        ]
+      }
+    },
+    {
+      "action_id": "b8a4d5af",
+      "action_type": "request_booking_confirmation",
+      "timestamp_start": "2026-05-04T09:23:55.527791+00:00",
+      "timestamp_end": "2026-05-04T09:23:55.527952+00:00",
+      "status": "success",
+      "verified_by_user": true,
+      "requested": {
+        "platform": "Uber",
+        "pickup": "San Francisco International Airport (SFO), CA 94128",
+        "dropoff": "San Jose, CA 95113",
+        "ride_type": "UberX",
+        "estimated_price": "$78\u2013$96",
+        "eta_pickup_minutes": 12,
+        "surge_note": ""
+      },
+      "executed": {
+        "platform": "Uber",
+        "pickup": "San Francisco International Airport (SFO), CA 94128",
+        "dropoff": "San Jose, CA 95113",
+        "ride_type": "UberX",
+        "estimated_price": "$78\u2013$96",
+        "eta_pickup_minutes": 12,
+        "surge_note": ""
+      },
+      "result": {
+        "approved": true,
+        "confirmation_token": "d08d8370d6774de6b689e55b1ba6ce2e",
+        "message": "User confirmed. Pass confirmation_token to book_ride."
+      }
+    },
+    {
+      "action_id": "1e829a06",
+      "action_type": "book_ride",
+      "timestamp_start": "2026-05-04T09:23:58.209904+00:00",
+      "timestamp_end": "2026-05-04T09:23:58.210111+00:00",
+      "status": "success",
+      "verified_by_user": true,
+      "requested": {
+        "pickup": "SFO Airport",
+        "dropoff": "downtown San Jose",
+        "ride_type": "UberX",
+        "token_provided": true
+      },
+      "executed": {
+        "pickup": "SFO Airport",
+        "dropoff": "downtown San Jose",
+        "ride_type": "UberX"
+      },
+      "result": {
+        "success": true,
+        "ride_id": "UBR-774F4F7E",
+        "driver": "Ana R.",
+        "driver_rating": 4.73,
+        "vehicle": "Blue Ford Explorer",
+        "license_plate": "3XPL8819",
+        "eta_minutes": 12,
+        "status": "arriving",
+        "message": "Booked! Ana R. (4.73\u2605) is on the way in a Blue Ford Explorer (3XPL8819). Pickup in ~12 min."
+      }
+    },
+    {
+      "action_id": "c5804e1b",
+      "action_type": "track_ride",
+      "timestamp_start": "2026-05-04T09:24:06.305143+00:00",
+      "timestamp_end": "2026-05-04T09:24:06.305313+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "executed": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "result": {
+        "ride_id": "UBR-774F4F7E",
+        "status": "arriving",
+        "eta_minutes": 12,
+        "message": "Ana R. is on the way \u2014 12 min away.",
+        "distance_remaining_miles": null,
+        "driver_location": {
+          "lat": 40.7589,
+          "lng": -73.9851
+        }
+      }
+    },
+    {
+      "action_id": "f1b159ad",
+      "action_type": "track_ride",
+      "timestamp_start": "2026-05-04T09:24:11.007739+00:00",
+      "timestamp_end": "2026-05-04T09:24:11.007806+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "executed": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "result": {
+        "ride_id": "UBR-774F4F7E",
+        "status": "arriving",
+        "eta_minutes": 2,
+        "message": "Ana R. is 2 minutes away. Head outside \u2014 look for a Blue Ford Explorer (3XPL8819).",
+        "distance_remaining_miles": null,
+        "driver_location": {
+          "lat": 40.7575,
+          "lng": -73.9843
+        }
+      }
+    },
+    {
+      "action_id": "b8bf5819",
+      "action_type": "track_ride",
+      "timestamp_start": "2026-05-04T09:24:15.311040+00:00",
+      "timestamp_end": "2026-05-04T09:24:15.311104+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "executed": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "result": {
+        "ride_id": "UBR-774F4F7E",
+        "status": "driver_arrived",
+        "eta_minutes": 0,
+        "message": "Ana R. has arrived! Your Blue Ford Explorer (3XPL8819) is waiting at the pickup point.",
+        "distance_remaining_miles": null,
+        "driver_location": {
+          "lat": 40.758,
+          "lng": -73.9855
+        }
+      }
+    },
+    {
+      "action_id": "445c6b5d",
+      "action_type": "track_ride",
+      "timestamp_start": "2026-05-04T09:24:20.941841+00:00",
+      "timestamp_end": "2026-05-04T09:24:20.942123+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "executed": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "result": {
+        "ride_id": "UBR-774F4F7E",
+        "status": "in_progress",
+        "eta_minutes": 117,
+        "message": "Your ride has started! Heading to downtown San Jose. Estimated arrival in 117 minutes.",
+        "distance_remaining_miles": 33.4,
+        "driver_location": {
+          "lat": 40.72,
+          "lng": -73.95
+        }
+      }
+    },
+    {
+      "action_id": "7c521eab",
+      "action_type": "track_ride",
+      "timestamp_start": "2026-05-04T09:24:38.761836+00:00",
+      "timestamp_end": "2026-05-04T09:24:38.761930+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "executed": {
+        "ride_id": "UBR-774F4F7E"
+      },
+      "result": {
+        "ride_id": "UBR-774F4F7E",
+        "status": "completed",
+        "eta_minutes": 0,
+        "message": "You have arrived at downtown San Jose! Ride completed. Total trip time: ~117 minutes. Thank you for riding with Uber!",
+        "distance_remaining_miles": null,
+        "driver_location": null
+      }
+    }
+  ],
+  "exchanges": [
+    {
+      "type": "user",
+      "content": "I need a ride from sfo airport to downtown san jose."
+    },
+    {
+      "type": "agent",
+      "content": "Great! Here are your available Uber options from SFO Airport to downtown San Jose:\n\n\ud83d\ude97 **UberPool** - $54\u2013$67 (5 min wait) - Seats 2\n\ud83d\ude97 **UberX** - $78\u2013$96 (12 min wait) - Seats 4\n\ud83d\ude97 **UberXL** - $114\u2013$139 (7 min wait) - Seats 6\n\ud83d\ude97 **Uber Comfort** - $130\u2013$158 (4 min wait) - Seats 4\n\ud83d\ude97 **Uber Black** - $211\u2013$258 (4 min wait) - Seats 4\n\nWhich ride type would you like to book?"
+    },
+    {
+      "type": "confirmation_gate",
+      "prompt": "BOOKING CONFIRMATION REQUIRED\n  Platform : Uber\n  Ride type: UberX\n  From     : San Francisco International Airport (SFO), CA 94128\n  To       : San Jose, CA 95113\n  Price    : $78\u2013$96\n  ETA      : 12 min",
+      "details": {
+        "platform": "Uber",
+        "pickup": "San Francisco International Airport (SFO), CA 94128",
+        "dropoff": "San Jose, CA 95113",
+        "ride_type": "UberX",
+        "estimated_price": "$78\u2013$96",
+        "eta_pickup_minutes": 12,
+        "surge_note": ""
+      },
+      "auto_response": "yes"
+    },
+    {
+      "type": "user",
+      "content": "Book me the UberX please."
+    },
+    {
+      "type": "agent",
+      "content": "Perfect! Your UberX is booked! \ud83c\udf89\n\n**Driver:** Ana R. \u2b50 4.73\n**Vehicle:** Blue Ford Explorer\n**License Plate:** 3XPL8819\n**ETA:** 12 minutes\n\nAna is on her way to SFO Airport now. I'll help you track your ride whenever you need an update!"
+    },
+    {
+      "type": "user",
+      "content": "Great, can you track my ride?"
+    },
+    {
+      "type": "agent",
+      "content": "Your driver Ana R. is on the way to pick you up at SFO Airport - she's about 12 minutes away. I'll keep you updated as she gets closer!"
+    },
+    {
+      "type": "user",
+      "content": "What is my ride progress?"
+    },
+    {
+      "type": "agent",
+      "content": "Ana R. is almost there - just 2 minutes away! Head outside and look for the Blue Ford Explorer with license plate 3XPL8819. \ud83d\ude97"
+    },
+    {
+      "type": "user",
+      "content": "Give me an update"
+    },
+    {
+      "type": "agent",
+      "content": "Your driver has arrived! Ana R. is waiting for you at the pickup point in the Blue Ford Explorer (3XPL8819). Head out now! \ud83c\udf89"
+    },
+    {
+      "type": "user",
+      "content": "Tell my ride status?"
+    },
+    {
+      "type": "agent",
+      "content": "Your ride is underway! \ud83d\ude97 You're heading to downtown San Jose with about 117 minutes (just under 2 hours) until arrival. You have about 33 miles remaining. Enjoy the ride!"
+    },
+    {
+      "type": "user",
+      "content": "Are we there yet?"
+    },
+    {
+      "type": "agent",
+      "content": "You've arrived at downtown San Jose! \ud83c\udf89 Your ride is complete. Total trip time was about 117 minutes. Thanks for riding with Uber - have a great day!"
+    }
+  ]
+}

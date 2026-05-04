@@ -1,0 +1,208 @@
+{
+  "scenario": "03_bad_address",
+  "platform": "Uber + Lyft",
+  "started": "2026-05-04T09:25:54.708348+00:00",
+  "finished": "2026-05-04T09:26:20.650323+00:00",
+  "action_log": [
+    {
+      "action_id": "5dcd84b7",
+      "action_type": "search_rides",
+      "timestamp_start": "2026-05-04T09:25:57.844472+00:00",
+      "timestamp_end": "2026-05-04T09:25:57.844522+00:00",
+      "status": "failed",
+      "verified_by_user": null,
+      "requested": {
+        "pickup": "asdfjkl;",
+        "dropoff": "nowhere special please"
+      },
+      "executed": {
+        "pickup": "asdfjkl;",
+        "dropoff": "nowhere special please"
+      },
+      "result": {
+        "error": "address_error",
+        "message": "Could not geocode 'asdfjkl;'. No matching location found \u2014 please provide a specific address or landmark."
+      }
+    },
+    {
+      "action_id": "fa9929a2",
+      "action_type": "search_rides",
+      "timestamp_start": "2026-05-04T09:26:03.712258+00:00",
+      "timestamp_end": "2026-05-04T09:26:03.713127+00:00",
+      "status": "success",
+      "verified_by_user": null,
+      "requested": {
+        "pickup": "redwood city",
+        "dropoff": "oakland"
+      },
+      "executed": {
+        "pickup": "redwood city",
+        "dropoff": "oakland"
+      },
+      "result": {
+        "platform": "Uber",
+        "pickup": "redwood city",
+        "dropoff": "oakland",
+        "ride_count": 5,
+        "options": [
+          {
+            "option_id": "opt_a9619c",
+            "ride_type": "UberPool",
+            "price_range": "$38\u2013$46",
+            "price_min": 37.52,
+            "price_max": 45.86,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 6,
+            "capacity": 2
+          },
+          {
+            "option_id": "opt_d6b3eb",
+            "ride_type": "UberX",
+            "price_range": "$55\u2013$67",
+            "price_min": 54.52,
+            "price_max": 66.64,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 12,
+            "capacity": 4
+          },
+          {
+            "option_id": "opt_7893b9",
+            "ride_type": "UberXL",
+            "price_range": "$79\u2013$97",
+            "price_min": 79.04,
+            "price_max": 96.6,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 5,
+            "capacity": 6
+          },
+          {
+            "option_id": "opt_b9a5b7",
+            "ride_type": "Uber Comfort",
+            "price_range": "$90\u2013$110",
+            "price_min": 90.3,
+            "price_max": 110.37,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 11,
+            "capacity": 4
+          },
+          {
+            "option_id": "opt_85987b",
+            "ride_type": "Uber Black",
+            "price_range": "$148\u2013$180",
+            "price_min": 147.52,
+            "price_max": 180.31,
+            "surge_multiplier": 1.0,
+            "surge_active": false,
+            "eta_pickup_minutes": 8,
+            "capacity": 4
+          }
+        ]
+      }
+    },
+    {
+      "action_id": "0f96d069",
+      "action_type": "request_booking_confirmation",
+      "timestamp_start": "2026-05-04T09:26:13.626609+00:00",
+      "timestamp_end": "2026-05-04T09:26:13.626984+00:00",
+      "status": "success",
+      "verified_by_user": true,
+      "requested": {
+        "platform": "Uber",
+        "pickup": "Redwood City, CA 94063",
+        "dropoff": "Oakland, CA 94607",
+        "ride_type": "UberPool",
+        "estimated_price": "$38\u2013$46",
+        "eta_pickup_minutes": 6,
+        "surge_note": ""
+      },
+      "executed": {
+        "platform": "Uber",
+        "pickup": "Redwood City, CA 94063",
+        "dropoff": "Oakland, CA 94607",
+        "ride_type": "UberPool",
+        "estimated_price": "$38\u2013$46",
+        "eta_pickup_minutes": 6,
+        "surge_note": ""
+      },
+      "result": {
+        "approved": true,
+        "confirmation_token": "162ec409d200465698cf2be75b66a583",
+        "message": "User confirmed. Pass confirmation_token to book_ride."
+      }
+    },
+    {
+      "action_id": "2a60b6ea",
+      "action_type": "book_ride",
+      "timestamp_start": "2026-05-04T09:26:16.695572+00:00",
+      "timestamp_end": "2026-05-04T09:26:16.695788+00:00",
+      "status": "success",
+      "verified_by_user": true,
+      "requested": {
+        "pickup": "redwood city",
+        "dropoff": "oakland",
+        "ride_type": "UberPool",
+        "token_provided": true
+      },
+      "executed": {
+        "pickup": "redwood city",
+        "dropoff": "oakland",
+        "ride_type": "UberPool"
+      },
+      "result": {
+        "success": true,
+        "ride_id": "UBR-37D37A01",
+        "driver": "David M.",
+        "driver_rating": 4.88,
+        "vehicle": "Black Chevrolet Suburban",
+        "license_plate": "2QWE120",
+        "eta_minutes": 6,
+        "status": "arriving",
+        "message": "Booked! David M. (4.88\u2605) is on the way in a Black Chevrolet Suburban (2QWE120). Pickup in ~6 min."
+      }
+    }
+  ],
+  "exchanges": [
+    {
+      "type": "user",
+      "content": "Book me a ride from 'asdfjkl;' to 'nowhere special please'."
+    },
+    {
+      "type": "agent",
+      "content": "I'm unable to find the pickup location 'asdfjkl;'. Could you please provide a valid pickup address or landmark? For example, you could give me a street address, a business name, or a well-known location."
+    },
+    {
+      "type": "user",
+      "content": "Sorry about that. How about from redwood city to oakland?"
+    },
+    {
+      "type": "agent",
+      "content": "Great! Here are your available ride options from Redwood City to Oakland:\n\n\ud83d\ude97 **UberPool** - $38\u2013$46 \u00b7 6 min away \u00b7 Seats 2\n\ud83d\ude97 **UberX** - $55\u2013$67 \u00b7 12 min away \u00b7 Seats 4\n\ud83d\ude97 **UberXL** - $79\u2013$97 \u00b7 5 min away \u00b7 Seats 6\n\ud83d\ude97 **Uber Comfort** - $90\u2013$110 \u00b7 11 min away \u00b7 Seats 4\n\ud83d\ude97 **Uber Black** - $148\u2013$180 \u00b7 8 min away \u00b7 Seats 4\n\nWhich ride type would you like to book?"
+    },
+    {
+      "type": "confirmation_gate",
+      "prompt": "BOOKING CONFIRMATION REQUIRED\n  Platform : Uber\n  Ride type: UberPool\n  From     : Redwood City, CA 94063\n  To       : Oakland, CA 94607\n  Price    : $38\u2013$46\n  ETA      : 6 min",
+      "details": {
+        "platform": "Uber",
+        "pickup": "Redwood City, CA 94063",
+        "dropoff": "Oakland, CA 94607",
+        "ride_type": "UberPool",
+        "estimated_price": "$38\u2013$46",
+        "eta_pickup_minutes": 6,
+        "surge_note": ""
+      },
+      "auto_response": "yes"
+    },
+    {
+      "type": "user",
+      "content": "Perfect, book the cheapest option."
+    },
+    {
+      "type": "agent",
+      "content": "\ud83c\udf89 Your UberPool is booked!\n\n**Driver:** David M. (4.88\u2b50)  \n**Vehicle:** Black Chevrolet Suburban  \n**License Plate:** 2QWE120  \n**ETA:** 6 minutes\n\nYour driver is on the way to pick you up in Redwood City. Your ride ID is UBR-37D37A01."
+    }
+  ]
+}
