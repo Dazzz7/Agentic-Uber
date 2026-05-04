@@ -64,7 +64,7 @@ When you swap from Uber to a new platform, issues surface in this order:
 
 ### 1. Ride type name mismatch (breaks immediately)
 The agent carries ride type strings across tool calls. If Lyft returns `"lyft_xl"` but the user or agent says `"UberXL"`, booking fails.
-**Fix:** Each adapter's `search_rides()` must return canonical names for *that* platform. The agent learns them from search results, never hardcodes.
+**Fix:** Each adapter's `search_rides()` must return canonical names for *that* platform. The agent learns them from search results, never hardcodes. Can add a block of locked/ unlocked state while using the current platform.
 
 ### 2. Surge confirmation flow (breaks on surge)
 Uber's surge requires the client to echo a `surge_confirmation_id`.
